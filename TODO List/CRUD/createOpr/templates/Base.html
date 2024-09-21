@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Entry</title>
+</head>
+<body>
+    <h2>To Do List Operations</h2>
+    <form>
+        {% csrf_token %}
+        <label>Create New User:</label>
+        <a href="{% url 'insert' %}" >  Click </a>
+        <br>
+        <label>Show User List:</label>
+        <a href="{% url 'showList' %}" >  Click </a>
+        <br>
+        <label>Delete or Update User:</label>
+        <a href="{% url 'delete' %}" >  Click </a>
+        <br>
+    </form>
+</body>
+</html>

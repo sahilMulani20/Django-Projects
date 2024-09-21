@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Entry</title>
+</head>
+<body>
+    <h2>Enter User Data</h2>
+    <form method="post" action="{% url 'processDB' %}">
+        {% csrf_token %}
+        <label for="user_name">User Name:</label>
+        <input type="text" name="user_name" required>
+        <br>
+        <label for="user_email">User Email:</label>
+        <input type="text" name="user_email" required>
+        <br>
+        <label for="user_password">User Password:</label>
+        <input type="text" name="user_password" required>
+        <br>
+        <label for="user_rePassword">User Re-Password:</label>
+        <input type="text" name="user_rePassword" required>
+        <br>
+        <label for="user_checkBox">I agree all statements in:</label>
+        <input type="checkbox" name="user_checkBox" />
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

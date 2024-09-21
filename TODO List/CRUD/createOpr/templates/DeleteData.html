@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients Data</title>
+</head>
+<body>
+    <h1>Delete User Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>RePassword</th>
+                <th>CheckBox</th>
+                <!-- Add more columns for additional fields -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in UserData %}
+                <tr>
+                    <td>{{ data.id }}</td>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.email_id }}</td>
+                    <td>{{ data.password }}</td>
+                    <td>{{ data.rePassword }}</td>
+                    <td>{{ data.isTermsAgree }}</td>
+                    <td><a href="{% url 'deleteRecord' data.id %}">Delete</a></td>
+                    <td><a href="{% url 'updateRecord' data.id %}">Edit</a></td>
+                    <!-- Add more cells for additional fields -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
